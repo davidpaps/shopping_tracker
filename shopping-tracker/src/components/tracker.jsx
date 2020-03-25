@@ -10,6 +10,16 @@ class Tracker extends Component {
     fontWeight: "bold"
   };
 
+  formatTags() {
+    return (
+      <ul>
+        {this.state.tags.map(tag => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -17,11 +27,8 @@ class Tracker extends Component {
           {this.formatCount()}
         </span>
         <button className="btn btn-secondary btn-sm">Increment</button>
-        <ul>
-          {this.state.tags.map(tag => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
+        {this.state.tags.length === 0 && "Please enter a tag"}
+        {this.formatTags()}
       </React.Fragment>
     );
   }
