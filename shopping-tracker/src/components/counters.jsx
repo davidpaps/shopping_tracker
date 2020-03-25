@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Tracker from "./tracker";
+import Count from "./count";
 
 class Counters extends Component {
   state = {
@@ -14,8 +14,8 @@ class Counters extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.counters.map(tracker => (
-          <Tracker key={tracker.id} />
+        {this.state.counters.map(count => (
+          <Count key={count.id} value={count.value} selected={true} />
         ))}
       </React.Fragment>
     );

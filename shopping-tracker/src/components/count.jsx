@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Tracker extends Component {
+class Count extends Component {
   state = {
     count: 0,
     tags: []
@@ -54,4 +54,4 @@ class Tracker extends Component {
   }
 }
 
-export default Tracker;
+export default Count;
