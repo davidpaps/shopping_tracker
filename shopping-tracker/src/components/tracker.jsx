@@ -29,7 +29,6 @@ class Tracker extends Component {
   }
 
   handleIncrement = product => {
-    console.log(product);
     this.setState({ count: this.state.count + 1 });
   };
 
