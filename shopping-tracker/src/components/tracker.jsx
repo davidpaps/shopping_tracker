@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 class Tracker extends Component {
+  constructor() {
+    super();
+    this.handleIncrement = this.handleIncrement.bind(this);
+  }
+
   state = {
     count: 0,
     tags: ["tag1", "tag2", "tag3"]
@@ -10,6 +15,28 @@ class Tracker extends Component {
     fontWeight: "bold"
   };
 
+  render() {
+    return (
+      <React.Fragment>
+        <span style={this.styles} className={this.formatBadgeClass()}>
+          {this.formatCount()}
+        </span>
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
+        {this.state.tags.length === 0 && "Please enter a tag"}
+        {this.formatTags()}
+      </React.Fragment>
+    );
+  }
+
+  handleIncrement() {
+    console.log("Increment Clicked", this);
+  }
+
   formatTags() {
     return (
       <ul>
@@ -17,19 +44,6 @@ class Tracker extends Component {
           <li key={tag}>{tag}</li>
         ))}
       </ul>
-    );
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <span style={this.styles} className={this.formatBadgeClass()}>
-          {this.formatCount()}
-        </span>
-        <button className="btn btn-secondary btn-sm">Increment</button>
-        {this.state.tags.length === 0 && "Please enter a tag"}
-        {this.formatTags()}
-      </React.Fragment>
     );
   }
 
