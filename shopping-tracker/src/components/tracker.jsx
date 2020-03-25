@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 
 class Tracker extends Component {
-  constructor() {
-    super();
-    this.handleIncrement = this.handleIncrement.bind(this);
-  }
-
   state = {
     count: 0,
     tags: ["tag1", "tag2", "tag3"]
@@ -33,9 +28,9 @@ class Tracker extends Component {
     );
   }
 
-  handleIncrement() {
+  handleIncrement = () => {
     console.log("Increment Clicked", this);
-  }
+  };
 
   formatTags() {
     return (
