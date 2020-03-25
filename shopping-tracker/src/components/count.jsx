@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Count extends Component {
   state = {
-    value: this.props.value,
+    value: this.props.count.value,
     tags: []
   };
   styles = {
@@ -23,7 +23,12 @@ class Count extends Component {
         >
           +
         </button>
-        <button className="btn btn-danger btn-sm m-2">Delete</button>
+        <button
+          onClick={() => this.props.onDelete(this.props.count.id)}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
         {this.state.tags.length === 0 && ""}
         {this.formatTags()}
       </React.Fragment>
