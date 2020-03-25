@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
+import Tracker from "./components/tracker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Tracker />
   </React.StrictMode>,
   document.getElementById("root")
 );
