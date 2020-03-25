@@ -13,6 +13,7 @@ class Count extends Component {
   render() {
     return (
       <React.Fragment>
+        {this.props.children}
         <span style={this.styles} className={this.formatBadgeClass()}>
           {this.formatCount()}
         </span>
@@ -20,8 +21,9 @@ class Count extends Component {
           onClick={product => this.handleIncrement(product)}
           className="btn btn-secondary btn-sm"
         >
-          Increment
+          +
         </button>
+        <button className="btn btn-danger btn-sm m-2">Delete</button>
         {this.state.tags.length === 0 && ""}
         {this.formatTags()}
       </React.Fragment>
