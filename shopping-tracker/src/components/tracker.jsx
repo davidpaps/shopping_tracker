@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 class Tracker extends Component {
   state = {
-    count: 0
+    count: 0,
+    tags: ["tag1", "tag2", "tag3"]
   };
   styles = {
     fontSize: 15,
@@ -10,14 +11,17 @@ class Tracker extends Component {
   };
 
   render() {
-    let classes = this.formatBadgeClass();
-
     return (
       <React.Fragment>
-        <span style={this.styles} className={classes}>
+        <span style={this.styles} className={this.formatBadgeClass()}>
           {this.formatCount()}
         </span>
         <button className="btn btn-secondary btn-sm">Increment</button>
+        <ul>
+          {this.state.tags.map(tag => (
+            <li key={tag}>{tag}</li>
+          ))}
+        </ul>
       </React.Fragment>
     );
   }
