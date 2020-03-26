@@ -13,7 +13,11 @@ class Counters extends Component {
   };
 
   handleIncrement = count => {
-    console.log(count);
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(count);
+    counters[index] = { ...count };
+    counters[index].value++;
+    this.setState({ counters });
   };
 
   handleReset = () => {
@@ -35,7 +39,7 @@ class Counters extends Component {
     return (
       <React.Fragment>
         <button
-          onCLick={this.handleReset}
+          onClick={this.handleReset}
           className="btn btn-primary btn-sm m-2"
         >
           Reset
