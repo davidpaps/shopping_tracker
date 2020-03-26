@@ -12,6 +12,10 @@ class Counters extends Component {
     ]
   };
 
+  handleIncrement = count => {
+    console.log(count);
+  };
+
   handleReset = () => {
     const counters = this.state.counters.map(count => {
       count.value = 0;
@@ -37,7 +41,12 @@ class Counters extends Component {
           Reset
         </button>
         {this.state.counters.map(count => (
-          <Count key={count.id} count={count} onDelete={this.handleDelete}>
+          <Count
+            key={count.id}
+            count={count}
+            onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
+          >
             <h4>Item #{count.id}</h4>
           </Count>
         ))}

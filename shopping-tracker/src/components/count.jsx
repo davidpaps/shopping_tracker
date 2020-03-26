@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class Count extends Component {
   state = {
-    value: this.props.count.value,
     tags: []
   };
   styles = {
@@ -18,7 +17,7 @@ class Count extends Component {
           {this.formatCount()}
         </span>
         <button
-          onClick={product => this.handleIncrement(product)}
+          onClick={() => this.props.onIncrement(this.props.count)}
           className="btn btn-secondary btn-sm"
         >
           +
@@ -35,10 +34,6 @@ class Count extends Component {
     );
   }
 
-  handleIncrement = product => {
-    this.setState({ value: this.state.value + 1 });
-  };
-
   formatTags() {
     return (
       <ul>
@@ -51,12 +46,12 @@ class Count extends Component {
 
   formatBadgeClass() {
     let classes = "badge m-2 badge-";
-    classes += this.state.value === 0 ? "warning" : "primary";
+    classes += this.props.count.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCount() {
-    const { value } = this.state;
+    const { value } = this.props.count;
     return value === 0 ? "Zero" : value;
   }
 }
