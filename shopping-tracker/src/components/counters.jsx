@@ -24,7 +24,7 @@ class Counters extends Component {
             onIncrement={onIncrement}
             onReduction={onReduction}
           >
-            <h4>Item #{count.id}</h4>
+            <h6>Item #{count.id}</h6>
           </Count>
         ))}
       </React.Fragment>
