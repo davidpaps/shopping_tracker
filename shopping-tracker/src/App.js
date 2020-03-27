@@ -26,7 +26,9 @@ class App extends Component {
     const counters = [...this.state.counters];
     const index = counters.indexOf(count);
     counters[index] = { ...count };
-    counters[index].value--;
+    counters[index].value > 0
+      ? counters[index].value--
+      : (counters[index].value = 0);
     this.setState({ counters });
   };
 
