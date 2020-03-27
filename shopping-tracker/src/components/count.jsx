@@ -23,11 +23,18 @@ class Count extends Component {
           +
         </button>
         <button
+          onClick={() => this.props.onReduction(this.props.count)}
+          className="btn btn-secondary btn-sm m-2"
+        >
+          -
+        </button>
+        <button
           onClick={() => this.props.onDelete(this.props.count.id)}
           className="btn btn-danger btn-sm m-2"
         >
           Delete
         </button>
+
         {this.state.tags.length === 0 && ""}
         {this.formatTags()}
       </React.Fragment>
