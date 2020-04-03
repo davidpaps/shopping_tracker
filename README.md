@@ -1,6 +1,6 @@
 # Shopping Tracker App
 
-After finishing my first react app ([_Tic Tac Toe_](https://github.com/davidpaps/tic_tac_toe_with_react)), I decided to experiment further with this amazing JavaScript library. This is a program that can be added to any ecommerce website. It is a shopping tracker that is present on a website where a user can add items to their basket and modify them.
+After finishing my first react app ([_Tic Tac Toe_](https://github.com/davidpaps/tic_tac_toe)), I decided to experiment further with this amazing JavaScript library. This is a program that can be added to any ecommerce website. It is a shopping tracker that is present on a website where a user can add items to their basket and modify.
 
 ---
 
